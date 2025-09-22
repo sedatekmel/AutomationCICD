@@ -1,5 +1,6 @@
 package rahulshettyacademy.tests;
 
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +10,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.List;
@@ -42,7 +45,7 @@ public class StandAloneTest {
         // Add to chart butonuna tıklandıktan sonra ekran ortasında çıkan loading iconunun kaybolmasını bekler.
         wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ngx-spinner-overlay"))));
 
-        //driver.findElement(By.cssSelector("button[routerlink='/dashboard/cart']")).click();
+        driver.findElement(By.cssSelector("button[routerlink='/dashboard/cart']")).click();
         List<WebElement> cartProducts = driver.findElements(By.cssSelector(".cartSection h3"));
         boolean match = cartProducts.stream().anyMatch(cartProduct -> cartProduct.getText().equalsIgnoreCase(productName));
         Assert.assertTrue(match);
@@ -66,5 +69,4 @@ public class StandAloneTest {
         System.out.println(driver.findElement(By.cssSelector("label[class='ng-star-inserted']")).getText().split("\\|")[1].trim());
         driver.close();
     }
-
 }

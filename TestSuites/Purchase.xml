@@ -3,10 +3,12 @@
 <suite parallel="tests" name="All Test Suite">
     <groups>
         <run>
-            <include name="ErrorHandling"/>
+            <include name="Purchase"/>
         </run>
     </groups>
-
+    <listeners>
+        <listener class-name="rahulshettyacademy.TestComponents.Listeners"/>
+    </listeners>
     <test verbose="2" thread-count="5" preserve-order="true" name="Submit Order Test">
         <classes>
             <class name="rahulshettyacademy.tests.SubmitOrderTest"/>
