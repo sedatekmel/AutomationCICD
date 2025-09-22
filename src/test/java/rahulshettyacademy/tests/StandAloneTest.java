@@ -20,6 +20,8 @@ public class StandAloneTest {
 
     public static void main(String[] args) {
 
+	//new comment
+
         String productName = "ADIDAS ORIGINAL";
 
         WebDriverManager.chromedriver().setup(); //setProperty ile de driver pathi verilebilirdi.
