@@ -16,6 +16,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public class SubmitOrderTest extends BaseTest {
+
+//new comment
     String productName = "ADIDAS ORIGINAL";
 
     @Test(dataProvider = "getData", groups = {"Purchase"})
